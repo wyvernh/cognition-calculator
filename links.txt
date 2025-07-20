@@ -1,0 +1,9 @@
+https://github.com/oyama/pico-sdcard-boot
+https://kevinboone.me/pico_run_ram2.html
+https://forums.raspberrypi.com/viewtopic.php?t=326338
+https://tonyfu97.github.io/Embedded-C-Interview-Prep/15_linker/
+https://datasheets.raspberrypi.com/pico/raspberry-pi-pico-c-sdk.pdf
+https://www.waveshare.com/wiki/Pico-ResTouch-LCD-2.8
+https://www.waveshare.com/pico-restouch-lcd-2.8.htm
+https://datasheets.raspberrypi.com/pico/pico-2-datasheet.pdf
+https://github.com/facontidavide/PlotJuggler/blob/main/COMPILE.md
