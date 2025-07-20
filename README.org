@@ -3,3 +3,13 @@
 #+author: Matthew Hinton
 
 A physical cognition-powered calculator implementation.
+
+* Compilation
+Create build directory and
+#+begin_src bash
+  export PICO_SDK_PATH=/path/to/sdk
+  cd build
+  cmake .. -DPICO_BOARD="pico2"
+  make
+#+end_src
+This will generate the main.uf2 file.
