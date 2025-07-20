@@ -2,8 +2,8 @@
 
 int main(void)
 {
-    while(1) {
-        lcd_test();
-    }
-    return 0;
+  while(1) {
+    lcd_test();
+  }
+  return 0;
 }

@@ -1,5 +1,5 @@
 /*****************************************************************************
-* | File      	:   lcd_2in8.c
+* | File        :   lcd_2in8.c
 * | Author      :   Waveshare team
 * | Function    :   2.9inch e-paper V2 test demo
 * | Info        :
@@ -37,28 +37,44 @@
 #include "hardware/watchdog.h"
 #include "pico/stdlib.h"
 
+extern LCD_DIS sLCD_DIS;
+
 int lcd_test(void)
 {
-	uint8_t counter = 0;
-   	
-	System_Init();
-	SD_Init();
-	LCD_SCAN_DIR  lcd_scan_dir = SCAN_DIR_DFT;
-	LCD_Init(lcd_scan_dir,800);
-	TP_Init(lcd_scan_dir);
+  printf("hello...\n");
+  uint8_t counter = 0;
 
-	GUI_Show();
-	Driver_Delay_ms(1000);
+  System_Init();
+  SD_Init();
 
-	LCD_Show_bmp(lcd_scan_dir);
-	Driver_Delay_ms(2000);
+  // down-to-up, left-to-right
+  LCD_SCAN_DIR  lcd_scan_dir = D2U_L2R; // default: SCAN_DIR_DFT;
 
-	TP_GetAdFac();
-	TP_Dialog(lcd_scan_dir);
-	while(1){
-		TP_DrawBoard(lcd_scan_dir);
-	}
+  // (scan direction, backlight brightness)
+  LCD_Init(lcd_scan_dir,800);
 
-	return 0;
+  // Touch initialization
+  TP_Init(lcd_scan_dir);
+
+  while (1) {
+    GUI_Show();
+    Driver_Delay_ms(1000);
+  }
+
+  GUI_DrawRectangle(sLCD_DIS.LCD_Dis_Column - 30, 20,
+                    sLCD_DIS.LCD_Dis_Column, 50,
+                    BLUE, DRAW_FULL, DOT_PIXEL_1X1);
+
+  return 0;
+
+  LCD_Show_bmp(lcd_scan_dir);
+  Driver_Delay_ms(2000);
+
+  TP_GetAdFac();
+  //TP_Dialog(lcd_scan_dir);
+  while(1){
+    TP_DrawBoard(lcd_scan_dir);
+  }
+
+  return 0;
 }
-
