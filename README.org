@@ -1,0 +1,5 @@
+#+title: Cognition Calculator
+#+description: A physical cognition-powered calculator implementation
+#+author: Matthew Hinton
+
+A physical cognition-powered calculator implementation.
